@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Projects</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="/Assests/img/favicon.png" type="image/x-icon">
 </head>
+
 <body class="bg-black text-white font-sans min-h-screen">
 
   <header class="bg-gray-800 p-4 shadow-md flex flex-col sm:flex-row justify-between items-center">
     <div class="text-2xl font-bold text-cyan-400">My Projects</div>
     <nav class="space-x-4 mt-2 sm:mt-0">
       <a href="/main web/index.html" target="_parent" class="text-white hover:text-cyan-400 transition">Home</a>
-      <a hrf="/main wejb/about.html" target="_parent" class="text-white hover:text-cyan-400 transition">About Me</a>
+      <a href="/main web/about.html" target="_parent" class="text-white hover:text-cyan-400 transition">About Me</a>
     </nav>
   </header>
 
@@ -21,17 +24,44 @@
     <section>
       <h2 class="text-xl font-semibold text-cyan-400 mb-2">Python</h2>
       <p class="text-gray-400 mb-6">All of Python project.</p>
-r
-      <div class="bg-gray-800 rounded-xl p-5 shadow-md border border-gray-800">
-        <h3 class="text-lg font-bold text-white mb-1">Happy</h3>
-        <p class="text-gray-300 mb-4">
-          My fist python project. It's a simple AI model that uses <span class="font-semibold">Vosk</span> for speech-to-text (STT) and <span class="font-semibold">pyttsx3</span> for text-to-speech (TTS). It can recognize and respond to basic voice commands.
+
+      <div class="bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 max-w-3xl mx-auto">
+        <h3 class="text-2xl font-extrabold text-cyan-400 mb-3">🎙️ Happy</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          This was my first Python AI project — a lightweight assistant named <strong>Happy</strong>. It uses
+          <span class="font-semibold text-cyan-300">Vosk</span> for speech-to-text (STT) and
+          <span class="font-semibold text-cyan-300">pyttsx3</span> for text-to-speech (TTS).
+          It can handle basic voice commands and respond with ease.
         </p>
-        <a href="https://github.com/Tanjii-kunn/Happy" target="_blank" class="inline-block px-4 py-2 bg-cyan-500 text-white rounded hover:bg-cyan-600 transition">
-          View on GitHub
+        <a href="https://github.com/Tanjii-kunn/Happy" target="_blank"
+          class="inline-block px-5 py-2.5 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition duration-200">
+          🔗 View on GitHub
         </a>
       </div>
+
+      <br>
+      <div class="bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 max-w-3xl mx-auto">
+        <h3 class="text-2xl font-extrabold text-cyan-400 mb-3">🤖 Nexi</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Nexi is my second AI chatbot designed to make your life easier 💡. It packs a bunch of cool features —
+          including
+          JSON-based memory for storing answers and retrieving them. While it doesn't use machine learning directly, you
+          can
+          trigger advanced responses by starting your prompt with <code
+            class="bg-gray-700 px-1 py-0.5 rounded text-cyan-300 text-sm">ask</code>.
+          That'll call Nemotron by NVIDIA via API for complex replies. Clean and powerful.
+        </p>
+        <video controls class="w-full rounded-lg shadow-md border border-gray-700" style="max-height: 90vh;">
+          <source src="/Assests/vid/nexi.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+
+      </div>
+
+
     </section>
+
 
     <section>
       <h2 class="text-xl font-semibold text-cyan-300 mb-2">Game Development</h2>
@@ -41,4 +71,5 @@ r
   </main>
 
 </body>
+
 </html>

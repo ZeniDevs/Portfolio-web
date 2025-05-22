@@ -2,55 +2,60 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Me</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="/Assests/img/favicon.png" type="image/x-icon">
 </head>
 
-<body class="bg-gray-900 text-white font-sans min-h-screen">
-    <header class="bg-gray-800 p-6 shadow-md">
-        <h1 class="text-3xl font-bold text-center text-cyan-400 mb-4">About Me</h1>
-        
-        <div class="flex gap-5 mb-6">
-            <a href="/main web/index.html" target="_parent"
-                class="bg-cyan-500 hover:bg-cyan-700 text-white font-semibold py-2 px-4 rounded transition duration-200 ">
-                Home
-            </a>
-            <a href="/main web/projects.html" target="_parent"
-                class="bg-cyan-500 hover:bg-cyan-700 text-white font-semibold py-2 px-4 rounded transition duration-200">
-                Projects
-            </a>
+<body class="bg-black text-white font-sans min-h-screen">
+
+  <!-- Header with About Me left, buttons right -->
+  <header class="bg-gray-800 px-6 py-4 shadow-md flex justify-between items-center flex-wrap gap-4">
+    <!-- Left side: Title -->
+    <h1 class="text-3xl font-bold text-cyan-400">About Me</h1>
+
+    <!-- Right side: nav buttons -->
+    <div class="flex gap-4">
+      <a href="/main web/index.html" target="_parent"
+        class="bg-cyan-500 hover:bg-cyan-700 text-white font-semibold py-2 px-4 rounded transition duration-200">
+        Home
+      </a>
+      <a href="/main web/projects.html" target="_parent"
+        class="bg-cyan-500 hover:bg-cyan-700 text-white font-semibold py-2 px-4 rounded transition duration-200">
+        Projects
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main class="max-w-3xl mx-auto p-6">
+    <section class="bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700">
+      <h2 class="text-2xl font-semibold text-cyan-300 mb-4">Biography</h2>
+
+      <p class="text-gray-300 mb-6">
+        Yo! I'm <span class="text-cyan-400 font-semibold">Zeni</span> - a passionate dev from India.
+        I'm into making fun & unique games with cool AI stuff for enemies and NPCs.
+        I'm still leveling up but I got a big vision for my games and other tools!
+      </p>
+
+      <!-- Skills -->
+      <div>
+        <h3 class="text-xl font-semibold text-cyan-300 mb-3">What I Know:</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="bg-cyan-600 text-white px-3 py-1 rounded-full text-sm font-medium">Python</span>
+          <span class="bg-cyan-600 text-white px-3 py-1 rounded-full text-sm font-medium">Basic Robotics</span>
+          <span class="bg-cyan-600 text-white px-3 py-1 rounded-full text-sm font-medium">HTML</span>
+          <span class="bg-cyan-600 text-white px-3 py-1 rounded-full text-sm font-medium">Tailwind CSS</span>
+          <span class="bg-cyan-600 text-white px-3 py-1 rounded-full text-sm font-medium">JavaScript</span>
+          <span class="bg-cyan-600 text-white px-3 py-1 rounded-full text-sm font-medium">C#</span>
+          <span class="bg-cyan-600 text-white px-3 py-1 rounded-full text-sm font-medium">GDScript</span>
         </div>
-    </header>
+      </div>
+    </section>
+  </main>
 
-    <main class="max-w-3xl mx-auto p-6">
-        <section class="bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700">
-            <h2 class="text-2xl font-semibold text-cyan-300 mb-4">Biography</h2>
-
-            <p class="text-gray-300">
-                Hey its me zeni again. so i am just a passionate 
-                developer and python developer, i live in India and i wanna make some preety unique and fun
-                games that may or maynot have a very interesting AI for enemy's and the NPC'
-                , I have a very big vision about my games, I'm not very exprienced as of now.
-            </p>
-            <br>
-            <div class="text-cyan-300 text-2xl hover:text-cyan-600">What I know:
-                <table>
-                    <th>
-                        P
-                    </th>
-                </table>
-            </div>
-
-
-
-            </div>
-
-        </section>
-    </main>
 </body>
 
 </html>

@@ -6,42 +6,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="/Assests/img/favicon.png" type="image/x-icon">
 </head>
 
-<header class="bg-gray-800 p-6 shadow-md">
-  <div class="flex items-center justify-between">
-    <!-- Left side: Title -->
-    <h1 class="text-2xl font-bold text-cyan-400">Welcome to My Portfolio</h1>
-
-    <!-- Right side: Nav Links -->
-    <nav>
-      <ul class="flex gap-6 text-gray-300">
-        <li>
-          <a href="/main web/index.html" target="_parent" class="hover:text-cyan-400">Home</a>
-        </li>
-        <li>
-          <a href="/main web/about.html" target="_parent" class="hover:text-cyan-400">About Me</a>
-        </li>
-        <li>
-          <a href="/main web/projects.html" target="_parent" class="hover:text-cyan-400">Projects</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-
 <body class="bg-black text-white font-sans min-h-screen">
+  <!-- Header -->
+  <header class="bg-gray-800 p-6 shadow-md">
+    <div class="flex items-center justify-between">
+      <h1 class="text-2xl font-bold text-cyan-400">Welcome to My Portfolio</h1>
+      <nav>
+        <ul class="flex gap-6 text-gray-300">
+          <li><a href="/main web/index.html" class="hover:text-cyan-400">Home</a></li>
+          <li><a href="/main web/about.html" class="hover:text-cyan-400">About Me</a></li>
+          <li><a href="/main web/projects.html" class="hover:text-cyan-400">Projects</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
+  <!-- Main Content -->
   <main class="max-w-4xl mx-auto p-6">
+    <!-- Fun Typing Bot Terminal -->
+    <section class="bg-gray-900 text-green-400 font-mono text-sm p-4 mb-6 rounded-xl shadow-inner border border-green-500">
+      <div id="terminal" class="whitespace-pre-wrap min-h-[80px]">🤖 booting up...</div>
     </section>
 
-    <section id="projects" class="bg-gray-800 p-6 rounded-xl mt-8 shadow-md border border-gray-700">
+    <!-- Intro -->
+    <section class="bg-gray-800 p-6 rounded-xl mt-8 shadow-md border border-gray-700">
       <p>
-        Hey, welcome! It's me Zeni and this is my portfolio. I am passionate about Game development, programming, and creating Best and Innovative games. Here you'll find some of my favorite and Best projects and a bit about my journey as a developer.
-      </ul>
+        Hey, welcome! It's me 
+        <a href="/main web/about.html" class="rounded-xl text-cyan-400 hover:text-cyan-500">Zeni</a> 
+        and this is my portfolio. I am passionate about Game development, programming, and creating Best and Innovative games. 
+        Here you'll find some of my favorite and Best projects and a bit about my journey as a developer.
+      </p>
     </section>
   </main>
+
+  <!-- Typing Script -->
+  <script>
+    const terminal = document.getElementById('terminal');
+    const message = "Welcome, human. I'm Nexi.\nWelcome to zeni's porfolio....\nHope you like the project's\nEnjoy and stay Chill 😎"
+    let index = 0;
+
+    const typingInterval = setInterval(() => {
+      terminal.textContent += message[index];
+      index++;
+      if (index >= message.length) clearInterval(typingInterval);
+    }, 50); // Typing speed
+  </script>
 </body>
 
 </html>
