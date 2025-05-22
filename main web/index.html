@@ -27,18 +27,50 @@
   <!-- Main Content -->
   <main class="max-w-4xl mx-auto p-6">
     <!-- Fun Typing Bot Terminal -->
-    <section class="bg-gray-900 text-green-400 font-mono text-sm p-4 mb-6 rounded-xl shadow-inner border border-green-500">
+    <section
+      class="bg-gray-900 text-green-400 font-mono text-sm p-4 mb-6 rounded-xl shadow-inner border border-green-500">
       <div id="terminal" class="whitespace-pre-wrap min-h-[80px]">🤖 booting up...</div>
     </section>
 
     <!-- Intro -->
     <section class="bg-gray-800 p-6 rounded-xl mt-8 shadow-md border border-gray-700">
       <p>
-        Hey, welcome! It's me 
-        <a href="/main web/about.html" class="rounded-xl text-cyan-400 hover:text-cyan-500">Zeni</a> 
-        and this is my portfolio. I am passionate about Game development, programming, and creating Best and Innovative games. 
+        Hey, welcome! It's me
+        <a href="/main web/about.html" class="rounded-xl text-cyan-400 hover:text-cyan-500">Zeni</a>
+        and this is my portfolio. I am passionate about Game development, programming, and creating Best and Innovative
+        games.
         Here you'll find some of my favorite and Best projects and a bit about my journey as a developer.
       </p>
+
+      <section class="mt-12 text-center">
+        <h2 class="text-xl text-cyan-300 font-bold mb-4">Tech Stack</h2>
+        <div class="flex flex-wrap justify-center gap-4">
+          <span class="bg-gray-800 px-4 py-2 rounded-lg text-sm text-cyan-200 border border-gray-600">Python</span>
+          <span class="bg-gray-800 px-4 py-2 rounded-lg text-sm text-cyan-200 border border-gray-600">Unity (C#)</span>
+          <span class="bg-gray-800 px-4 py-2 rounded-lg text-sm text-cyan-200 border border-gray-600">Tailwind
+            CSS</span>
+          <span class="bg-gray-800 px-4 py-2 rounded-lg text-sm text-cyan-200 border border-gray-600">Robotics</span>
+          <!-- etc -->
+        </div>
+      </section>
+
+
+      <section class="mt-10 text-center">
+        <h2 class="text-lg font-bold text-cyan-300 mb-2"> A💡 Dev Quote for you</h2>
+        <p id="quote" class="text-gray-300 text-sm italic">"Talk is cheap. Show me the code." - Linus Torvalds</p>
+      </section>
+
+
+      <script> //random quote
+        const quotes = [
+          `"pTalk is cheap. Show me the code." - Linus Torvalds`,
+          `"Programs must be written for people to read." - Harold Abelson`,
+          `"Any fool can write code that a computer can understand." - Martin Fowler`,
+          `"Code never lies, comments sometimes do." - Ron Jeffries`
+        ];
+        document.getElementById("quote").innerText = quotes[Math.floor(Math.random() * quotes.length)];
+      </script>
+
     </section>
   </main>
 
