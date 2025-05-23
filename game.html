@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Click The Icon Game</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer>
+    let score = 0;
+    let timeLeft = 30;
+    let gameInterval;
+
+    function getRandomPos(max) {
+      return Math.floor(Math.random() * max);
+    }
+
+    function moveIcon() {
+      const icon = document.getElementById('target-icon');
+      const container = document.getElementById('game-container');
+      const maxX = container.clientWidth - icon.clientWidth;
+      const maxY = container.clientHeight - icon.clientHeight;
+
+      icon.style.left = getRandomPos(maxX) + 'px';
+      icon.style.top = getRandomPos(maxY) + 'px';
+    }
+
+    function startGame() {
+      score = 0;
+      timeLeft = 30;
+      document.getElementById('score').textContent = score;
+      document.getElementById('time').textContent = timeLeft;
+      document.getElementById('start-btn').disabled = true;
+
+      moveIcon();
+
+      gameInterval = setInterval(() => {
+        timeLeft--;
+        document.getElementById('time').textContent = timeLeft;
+        if (timeLeft <= 0) {
+          clearInterval(gameInterval);
+          alert('Game over! Your score: ' + score);
+          document.getElementById('start-btn').disabled = false;
+        } else {
+          moveIcon();
+        }
+      }, 1000);
+    }
+
+    function iconClicked() {
+      score++;
+      document.getElementById('score').textContent = score;
+      moveIcon();
+    }
+
+    window.onload = () => {
+      document.getElementById('target-icon').addEventListener('click', iconClicked);
+    };
+  </script>
+  <style>
+    #target-icon {
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      cursor: pointer;
+      transition: all 0.1s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center px-4">
+  <h1 class="text-4xl font-bold mb-4 text-yellow-400">🎯 Click The Icon</h1>
+  <div class="mb-4 text-lg">
+    ⏱️ Time: <span id="time" class="text-green-400">30</span>s |
+    🧮 Score: <span id="score" class="text-blue-400">0</span>
+  </div>
+  <button id="start-btn" onclick="startGame()"
+          class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-4 py-2 rounded mb-4 transition">
+    Start Game
+  </button>
+  <div id="game-container" class="relative w-full max-w-md h-[400px] bg-gray-800 rounded-lg shadow-lg border border-gray-700 overflow-hidden">
+    <img id="target-icon" src="assets/img/target.png" alt="Target Icon">
+  </div>
+</body>
+</html>
