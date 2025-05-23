@@ -14,24 +14,26 @@
   <header class="bg-gray-800 p-4 shadow-md flex flex-col sm:flex-row justify-between items-center">
     <div class="text-2xl font-bold text-cyan-400">My Projects</div>
     <nav class="space-x-4 mt-2 sm:mt-0">
-      <a href="index.html" target="_parent" class="text-white hover:text-cyan-400 transition">Home</a>
-      <a href="about.html" target="_parent" class="text-white hover:text-cyan-400 transition">About Me</a>
+      <a href="index.html" class="text-white hover:text-cyan-400 transition">Home</a>
+      <a href="about.html" class="text-white hover:text-cyan-400 transition">About Me</a>
     </nav>
   </header>
 
   <main class="p-6 space-y-12 max-w-4xl mx-auto">
 
+    <!-- Python Section -->
     <section>
       <h2 class="text-xl font-semibold text-cyan-400 mb-2">Python</h2>
-      <p class="text-gray-400 mb-6">All of Python project.</p>
+      <p class="text-gray-400 mb-6">All my Python projects.</p>
 
-      <div class="bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 max-w-3xl mx-auto">
+      <!-- Happy Project -->
+      <div class="bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 max-w-3xl mx-auto mb-6">
         <h3 class="text-2xl font-extrabold text-cyan-400 mb-3">🎙️ Happy</h3>
         <p class="text-gray-300 leading-relaxed mb-4">
-          This was my first Python AI project — a lightweight assistant named <strong>Happy</strong>. It uses
+          <strong>Happy</strong> is my first Python AI project—a lightweight voice assistant that uses
           <span class="font-semibold text-cyan-300">Vosk</span> for speech-to-text (STT) and
           <span class="font-semibold text-cyan-300">pyttsx3</span> for text-to-speech (TTS).
-          It can handle basic voice commands and respond with ease.
+          It responds to basic voice commands with ease.
         </p>
         <a href="https://github.com/Tanjii-kunn/Happy" target="_blank"
           class="inline-block px-5 py-2.5 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition duration-200">
@@ -39,17 +41,15 @@
         </a>
       </div>
 
-      <br>
+      <!-- Nexi Project -->
       <div class="bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 max-w-3xl mx-auto">
         <h3 class="text-2xl font-extrabold text-cyan-400 mb-3">🤖 Nexi</h3>
         <p class="text-gray-300 leading-relaxed mb-4">
-          Nexi is my second AI chatbot designed to make your life easier 💡. It packs a bunch of cool features —
-          including
-          JSON-based memory for storing answers and retrieving them. While it doesn't use machine learning directly, you
-          can
-          trigger advanced responses by starting your prompt with <code
-            class="bg-gray-700 px-1 py-0.5 rounded text-cyan-300 text-sm">ask</code>.
-          That'll call Nemotron by NVIDIA via API for complex replies. Clean and powerful.
+          <strong>Nexi</strong> is my second AI chatbot, built to assist with everyday queries. It features a
+          JSON-based memory system for storing and retrieving user data. While it doesn’t directly use machine
+          learning, advanced replies can be triggered by starting prompts with
+          <code class="bg-gray-700 px-1 py-0.5 rounded text-cyan-300 text-sm">ask</code>,
+          which calls NVIDIA’s Nemotron API.
         </p>
         <video controls class="w-full rounded-lg shadow-md border border-gray-700" style="max-height: 90vh;">
           <source src="/Assests/vid/nexi.mp4" type="video/mp4">
@@ -58,10 +58,43 @@
       </div>
     </section>
 
-
+    <!-- Game Development Section -->
     <section>
       <h2 class="text-xl font-semibold text-cyan-300 mb-2">Game Development</h2>
-      <p class="text-gray-400">All of Game Development project.</p>
+      <p class="text-gray-400 mb-6">All my Game Development projects.</p>
+
+      <!-- The Perfect World -->
+      <div class="bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 max-w-3xl mx-auto mb-6">
+        <h3 class="text-2xl font-extrabold text-cyan-400 mb-3">The Perfect World</h3>
+        <p class="text-white leading-relaxed mb-4">
+          <strong>The Perfect World</strong> was my first game, developed for
+          <span class="text-cyan-300 font-semibold">Bracker's Game Jam 2025</span>. Built using
+          <a href="https://godotengine.org/" class="text-cyan-400 hover:text-cyan-600 transition">Godot Engine</a>,
+          the game featured a semi-open-world structure with an integrated quest system and immersive background
+          music. As a debut, it delivered a polished and elegant experience I'm genuinely proud of.
+        </p>
+        <a href="https://hunterr-kun.itch.io/the-perfect-world" target="_blank"
+          class="inline-block px-5 py-2.5 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition duration-200">
+          🔗 View on Itch.io
+        </a>
+      </div>
+
+      <!-- The Mage's Wand -->
+      <div class="bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 max-w-3xl mx-auto">
+        <h3 class="text-2xl font-extrabold text-cyan-400 mb-3">The Mage's Wand</h3>
+        <p class="text-white leading-relaxed mb-4">
+          <strong>The Mage’s Wand</strong> is a fast-paced action platformer made for
+          <span class="text-cyan-300 font-semibold">Micro Jam</span>. Built in
+          <a href="https://godotengine.org/" class="text-cyan-400 hover:text-cyan-600 transition">Godot Engine</a>,
+          the gameplay revolves around parkour and combat with slimes. This was my first project to implement
+          <span class="text-cyan-300 font-semibold">parallax backgrounds</span> for enhanced visual depth and included a
+          refined item collection system that added interactive layers to the overall experience.
+        </p>
+        <a href="https://hunterr-kun.itch.io/the-mages-wand" target="_blank"
+          class="inline-block px-5 py-2.5 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition duration-200">
+          🔗 View on Itch.io
+        </a>
+      </div>
     </section>
 
   </main>
