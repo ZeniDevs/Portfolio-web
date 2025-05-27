@@ -1,43 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Click The Icon Game</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     #target-icon {
-      width: 80px;
-      height: 80px;
+      width: 60px;
+      height: 60px;
       position: absolute;
       cursor: pointer;
       transition: all 0.1s ease-in-out;
-      pointer-events: none;
+      user-select: none;
+      touch-action: none;
+    }
+
+    /* Fullscreen fix */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    #game-container {
+      touch-action: manipulation;
     }
   </style>
 </head>
 
-<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center px-4 relative">
+<body class="bg-gray-900 text-white flex flex-col items-center justify-center p-2 h-screen w-screen relative">
 
   <!-- Home Button -->
-  <div class="absolute top-4 right-4 z-50">
-    <a href="index.html" class="bg-cyan-500 hover:bg-cyan-700 text-white font-semibold py-2 px-4 rounded">
+  <div class="absolute top-2 right-2 z-50">
+    <a href="index.html"
+      class="bg-cyan-500 hover:bg-cyan-700 text-white font-semibold py-2 px-4 rounded transition duration-200 text-sm">
       Home
     </a>
   </div>
 
-  <h1 class="text-4xl font-bold mb-4 text-yellow-400">🎯 Click The Icon</h1>
-  <div class="mb-4 text-lg">
+  <h1 class="text-2xl md:text-4xl font-bold mb-3 text-yellow-400 text-center">🎯 Click The Icon</h1>
+
+  <div class="mb-3 text-lg text-center">
     ⏱️ Time: <span id="time" class="text-green-400">30</span>s |
     🧮 Score: <span id="score" class="text-blue-400">0</span>
   </div>
 
   <button id="start-btn" onclick="startGame()"
-    class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-4 py-2 rounded mb-4 transition">
+    class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-6 py-2 rounded mb-4">
     Start Game
   </button>
 
   <div id="game-container"
-    class="relative w-full max-w-sm sm:max-w-md h-[400px] bg-gray-800 rounded-lg shadow-lg border border-gray-700 overflow-hidden p-2">
+    class="relative w-full h-full bg-gray-800 rounded-lg border border-gray-700 overflow-hidden flex-grow">
     <img id="target-icon" src="Assests/img/target.png" alt="Target Icon">
   </div>
 
@@ -68,17 +86,13 @@
       document.getElementById('time').textContent = timeLeft;
       document.getElementById('start-btn').disabled = true;
 
-      const icon = document.getElementById('target-icon');
-      icon.style.pointerEvents = 'auto';
       moveIcon();
 
       gameInterval = setInterval(() => {
         timeLeft--;
         document.getElementById('time').textContent = timeLeft;
-
         if (timeLeft <= 0) {
-          clearInterval(gameInterval);
-          endGame();
+          endGame(); // ✅ fixed bug
         } else {
           moveIcon();
         }
@@ -87,17 +101,14 @@
 
     function endGame() {
       clearInterval(gameInterval);
-      document.getElementById('target-icon').style.pointerEvents = 'none';
+      document.getElementById('start-btn').disabled = false;
 
       if (score > highScore) {
         localStorage.setItem('highScore', score);
-        highScore = score;
-        alert('New High Score! 🎉 Your score: ' + score);
+        alert('🎉 New High Score! Your score: ' + score);
       } else {
         alert('Game over! Your score: ' + score + '. High Score: ' + highScore);
       }
-
-      document.getElementById('start-btn').disabled = false;
     }
 
     function iconClicked() {
@@ -108,8 +119,10 @@
 
     window.onload = () => {
       document.getElementById('target-icon').addEventListener('click', iconClicked);
+      document.getElementById('target-icon').addEventListener('touchstart', iconClicked); // mobile support
     };
   </script>
 
 </body>
+
 </html>
