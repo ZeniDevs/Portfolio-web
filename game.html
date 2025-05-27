@@ -1,14 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <title>Click The Icon Game</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script defer>
+  <style>
+    #target-icon {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      cursor: pointer;
+      transition: all 0.1s ease-in-out;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center px-4 relative">
+
+  <!-- Home Button -->
+  <div class="absolute top-4 right-4 z-50">
+    <a href="index.html" class="bg-cyan-500 hover:bg-cyan-700 text-white font-semibold py-2 px-4 rounded">
+      Home
+    </a>
+  </div>
+
+  <h1 class="text-4xl font-bold mb-4 text-yellow-400">🎯 Click The Icon</h1>
+  <div class="mb-4 text-lg">
+    ⏱️ Time: <span id="time" class="text-green-400">30</span>s |
+    🧮 Score: <span id="score" class="text-blue-400">0</span>
+  </div>
+
+  <button id="start-btn" onclick="startGame()"
+    class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-4 py-2 rounded mb-4 transition">
+    Start Game
+  </button>
+
+  <div id="game-container"
+    class="relative w-full max-w-sm sm:max-w-md h-[400px] bg-gray-800 rounded-lg shadow-lg border border-gray-700 overflow-hidden p-2">
+    <img id="target-icon" src="Assests/img/target.png" alt="Target Icon">
+  </div>
+
+  <script>
     let score = 0;
     let timeLeft = 30;
     let gameInterval;
+    let highScore = localStorage.getItem('highScore') || 0;
 
     function getRandomPos(max) {
       return Math.floor(Math.random() * max);
@@ -31,34 +68,37 @@
       document.getElementById('time').textContent = timeLeft;
       document.getElementById('start-btn').disabled = true;
 
+      const icon = document.getElementById('target-icon');
+      icon.style.pointerEvents = 'auto';
       moveIcon();
 
       gameInterval = setInterval(() => {
         timeLeft--;
         document.getElementById('time').textContent = timeLeft;
+
         if (timeLeft <= 0) {
           clearInterval(gameInterval);
-          endGame;
-          document.getElementById('start-btn').disabled = false;
+          endGame();
         } else {
           moveIcon();
         }
       }, 1000);
     }
 
-    let highScore = localStorage.getItem('highScore') || 0;
-
     function endGame() {
       clearInterval(gameInterval);
+      document.getElementById('target-icon').style.pointerEvents = 'none';
+
       if (score > highScore) {
         localStorage.setItem('highScore', score);
+        highScore = score;
         alert('New High Score! 🎉 Your score: ' + score);
       } else {
         alert('Game over! Your score: ' + score + '. High Score: ' + highScore);
       }
+
       document.getElementById('start-btn').disabled = false;
     }
-
 
     function iconClicked() {
       score++;
@@ -70,41 +110,6 @@
       document.getElementById('target-icon').addEventListener('click', iconClicked);
     };
   </script>
-  <style>
-    #target-icon {
-      width: 60px;
-      height: 60px;
-      position: absolute;
-      cursor: pointer;
-      transition: all 0.1s ease-in-out;
-    }
-  </style>
-</head>
-
-<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center px-4 relative">
-
-  <!-- Home Button -->
-  <div class="absolute top-4 right-4 z-50">
-    <a href="index.html" target="_parent"
-      class="bg-cyan-500 hover:bg-cyan-700 text-white font-semibold py-2 px-4 rounded transition duration-200">
-      Home
-    </a>
-  </div>
-
-  <h1 class="text-4xl font-bold mb-4 text-yellow-400">🎯 Click The Icon</h1>
-  <div class="mb-4 text-lg">
-    ⏱️ Time: <span id="time" class="text-green-400">30</span>s |
-    🧮 Score: <span id="score" class="text-blue-400">0</span>
-  </div>
-  <button id="start-btn" onclick="startGame()"
-    class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-4 py-2 rounded mb-4 transition">
-    Start Game
-  </button>
-  <div id="game-container"
-    class="relative w-full max-w-md h-[400px] bg-gray-800 rounded-lg shadow-lg border border-gray-700 overflow-hidden">
-    <img id="target-icon" src="Assests/img/target.png" alt="Target Icon">
-  </div>
 
 </body>
-
 </html>
