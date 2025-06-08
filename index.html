@@ -91,6 +91,39 @@
       if (index >= message.length) clearInterval(typingInterval);
     }, 50); // Typing speed
   </script>
-</body>
 
+  <!-- Floating Chatbot Button -->
+  <button id="chatToggle"
+    class="fixed bottom-6 right-6 z-50 bg-cyan-500 hover:bg-cyan-600 rounded-full w-16 h-16 shadow-lg flex items-center justify-center"
+    onclick="window.location.href='AI.html'">
+    <img src="/Assests/img/favicon.gif" alt="Chat" class="w-10 h-10" />
+  </button>
+
+  <!-- Toggle Script -->
+  <script>
+    const chatToggle = document.getElementById('chatToggle');
+    const chatContainer = document.getElementById('chatContainer');
+
+    chatToggle.addEventListener('click', () => {
+      // Toggle chatbot visibility
+      if (chatContainer.classList.contains('opacity-0')) {
+        chatContainer.classList.remove('opacity-0', 'pointer-events-none');
+        chatContainer.classList.add('opacity-100');
+      } else {
+        chatContainer.classList.add('opacity-0', 'pointer-events-none');
+        chatContainer.classList.remove('opacity-100');
+      }
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 p-6 mt-12 text-center">
+    <p class="text-gray-400 text-sm">
+      &copy; 2025 Zeni. No rights reserved.
+      <br>
+      Made with Passion using Tailwind CSS and JavaScript.
+    </p>
+  </footer>
+
+</body>
 </html>

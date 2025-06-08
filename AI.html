@@ -1,29 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" >
 <head>
-  <title>Nexi</title>
-  <script>
-    async function askme() {
-      const question = document.getElementById('input').value;
-
-      const res = await fetch("https://your-backend-url/ask", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ question })
-      });
-
-      const data = await res.json();
-      document.getElementById('response').innerText = data.response;
-    }
-  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZeniBot Chat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-black text-white min-h-screen flex items-center justify-center p-6">
 
-<body style="background:#0f172a; color:white; font-family:sans-serif; padding:2rem">
-  <h1>Nexi Chat</h1>
-  <input type="text" id="input" placeholder="Ask me something..." style="padding:0.5rem; width:60%">
-  <button onclick="askme()" style="padding:0.5rem 1rem; margin-left:1rem;">Ask</button>
-  <p id="response" style="margin-top:2rem; font-size:1.2rem;"></p>
+  <div class="bg-[#0d1117] rounded-xl shadow-lg p-6 w-full max-w-md space-y-4 border border-cyan-400 flex flex-col">
+    <div class="flex items-center justify-between mb-2">
+      <h2 class="text-cyan-400 text-xl font-bold">Chat With ME</h2>
+      <a href="index.html" class="bg-cyan-700 hover:bg-cyan-600 text-white font-semibold py-1 px-4 rounded-xl transition text-base">Home</a>
+    </div>
+    <div id="chatWindow" class="flex-grow space-y-3 max-h-96 overflow-y-auto border-b border-cyan-400 pb-4"></div>
+    <div id="questionSection" class="space-y-2 mt-4"></div>
+  </div>
+
+  <script>
+    const chatWindow = document.getElementById('chatWindow');
+    const questionSection = document.getElementById('questionSection');
+
+    const questions = [
+      {
+        question: "Hey there! Wanna know more?",
+        options: [
+          { text: "How are you?", response: "Feelin' hyped and caffeinated!" },
+          { text: "What is your name?", response: "Call me Zeni—the code-slingin', game-jammin' dev." },
+          { text: "More about Zeni?", response: "Python, Unity, AI, and vibes—that’s me." }
+        ]
+      },
+      {
+        question: "Still curious? Choose one:",
+        options: [
+          { text: "Future goals?", response: "Gonna crack Finland’s tech scene wide open." },
+          { text: "Show your work!", response: "Check out my portfolio, links and all—don’t sleep on it." },
+          { text: "Nah, I'm done.", response: "Aight, peace out ✌️" }
+        ]
+      }
+    ];
+
+    let chat = [{ from: 'bot', text: 'Yo! What you wanna know about me?' }];
+    let step = 0;
+
+    function renderChat() {
+      chatWindow.innerHTML = '';
+      chat.forEach(msg => {
+        const div = document.createElement('div');
+        div.textContent = msg.text;
+        div.className = `p-3 rounded-lg max-w-[80%] ${
+          msg.from === 'bot' ? 'bg-blue-800 text-left self-start' : 'bg-cyan-600 text-right self-end'
+        }`;
+        chatWindow.appendChild(div);
+      });
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    }
+
+    function showQuestion() {
+      questionSection.innerHTML = '';
+      // Loop questions infinitely
+      const currentStep = step % questions.length;
+      const q = document.createElement('p');
+      q.textContent = questions[currentStep].question;
+      q.className = "text-cyan-300 font-semibold mb-2";
+      questionSection.appendChild(q);
+
+      questions[currentStep].options.forEach(option => {
+        const btn = document.createElement('button');
+        btn.textContent = option.text;
+        btn.className = "block w-full bg-cyan-700 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded-xl mb-2 transition";
+        btn.onclick = () => {
+          chat.push({ from: 'user', text: option.text });
+          chat.push({ from: 'bot', text: option.response });
+          step++;
+          renderChat();
+          questionSection.innerHTML = '';
+          setTimeout(() => {
+            showQuestion();
+          }, 1000);
+        };
+        questionSection.appendChild(btn);
+      });
+    }
+
+    // Initialize
+    renderChat();
+    setTimeout(showQuestion, 1000);
+
+  </script>
 </body>
 </html>
