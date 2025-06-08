@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nexi</title>
+  <script>
+    async function askme() {
+      const question = document.getElementById('input').value;
+
+      const res = await fetch("https://your-backend-url/ask", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ question })
+      });
+
+      const data = await res.json();
+      document.getElementById('response').innerText = data.response;
+    }
+  </script>
+</head>
+
+<body style="background:#0f172a; color:white; font-family:sans-serif; padding:2rem">
+  <h1>Nexi Chat</h1>
+  <input type="text" id="input" placeholder="Ask me something..." style="padding:0.5rem; width:60%">
+  <button onclick="askme()" style="padding:0.5rem 1rem; margin-left:1rem;">Ask</button>
+  <p id="response" style="margin-top:2rem; font-size:1.2rem;"></p>
+</body>
+</html>
