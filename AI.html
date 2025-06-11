@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ZeniBot Chat</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-black text-white min-h-screen flex items-center justify-center p-6">
 
   <div class="bg-[#0d1117] rounded-xl shadow-lg p-6 w-full max-w-md space-y-4 border border-cyan-400 flex flex-col">
     <div class="flex items-center justify-between mb-2">
-      <h2 class="text-cyan-400 text-xl font-bold">Chat With ME</h2>
-      <a href="index.html" class="bg-cyan-700 hover:bg-cyan-600 text-white font-semibold py-1 px-4 rounded-xl transition text-base">Home</a>
+      <h2 class="text-cyan-400 text-xl font-bold">Chat With Me</h2>
+      <a href="index.html"
+        class="bg-cyan-700 hover:bg-cyan-600 text-white font-semibold py-1 px-4 rounded-xl transition text-base">Home</a>
     </div>
     <div id="chatWindow" class="flex-grow space-y-3 max-h-96 overflow-y-auto border-b border-cyan-400 pb-4"></div>
     <div id="questionSection" class="space-y-2 mt-4"></div>
@@ -25,17 +28,29 @@
       {
         question: "Hey there! Wanna know more?",
         options: [
-          { text: "How are you?", response: "Feelin' hyped and caffeinated!" },
-          { text: "What is your name?", response: "Call me Zeni—the code-slingin', game-jammin' dev." },
-          { text: "More about Zeni?", response: "Python, Unity, AI, and vibes—that’s me." }
+          { text: "How are you?", response: "I'm feeling great and confident about making a Masterpiece." },
+          { text: "What is your name?", response: "Call me zeni but my name is Ujjwal." },
+          { text: "More about Zeni?", response: "Python, Unity, AI, and vibes—that's me." },
+          { text: "What is your age?", response: "I'm still very young and under 16, still my games are more mature." }
         ]
       },
       {
         question: "Still curious? Choose one:",
         options: [
-          { text: "Future goals?", response: "Gonna crack Finland’s tech scene wide open." },
-          { text: "Show your work!", response: "Check out my portfolio, links and all—don’t sleep on it." },
-          { text: "Nah, I'm done.", response: "Aight, peace out ✌️" }
+          { text: "Future goals?", response: "Gonna crack Finland's tech scene wide open and get into KMAK university." },
+          { text: "What do you do?", response: "I'm all about game dev, coding, and AI magic." },
+          { text: "Where do you live?", response: "I'm based in India, the land of diversity, But I will soon move to Finland." },
+          { text: "Your Dream game?", response: "A game all about exploring the nature and fulfilling the dream of your creator as a robot Called 'The Wind'." }
+
+        ]
+      },
+      {
+        question: "Want to know more about my projects?",
+        options: [
+          { text: "Yes, tell me about your projects.", response: "Sure! I have worked on various projects including games, AI bots, and many more." },
+          { text: "What is your favorite project?", response: "My favorite project is a which i developed with 5 other's  called ' The Cult'." },
+          { text: "How can I see your projects?", response: "You can check out my projects on my GitHub profile links on my portfolio website." },
+          { text: "Do you collaborate with others?", response: "Yes, I Do and easily co-operate with others." }
         ]
       }
     ];
@@ -45,17 +60,49 @@
 
     function renderChat() {
       chatWindow.innerHTML = '';
-      chat.forEach(msg => {
+      const messagesExceptLast = chat.slice(0, -1);
+      const lastMessage = chat[chat.length - 1];
+
+      messagesExceptLast.forEach(msg => {
         const div = document.createElement('div');
         div.textContent = msg.text;
-        div.className = `p-3 rounded-lg max-w-[80%] ${
-          msg.from === 'bot' ? 'bg-blue-800 text-left self-start' : 'bg-cyan-600 text-right self-end'
-        }`;
+        div.className = `p-3 rounded-lg max-w-[80%] ${msg.from === 'bot' ? 'bg-blue-800 text-left self-start' : 'bg-cyan-600 text-right self-end'
+          }`;
         chatWindow.appendChild(div);
       });
+
+      if (lastMessage.from === 'bot') {
+        const div = document.createElement('div');
+        div.className = `p-3 rounded-lg max-w-[80%] bg-blue-800 text-left self-start`;
+        chatWindow.appendChild(div);
+        typeText(div, lastMessage.text);
+      } else {
+        const div = document.createElement('div');
+        div.textContent = lastMessage.text;
+        div.className = `p-3 rounded-lg max-w-[80%] bg-cyan-600 text-right self-end`;
+        chatWindow.appendChild(div);
+      }
+
       chatWindow.scrollTop = chatWindow.scrollHeight;
     }
 
+    // Typing effect
+    function typeText(element, text, speed = 30) {
+      let i = 0;
+      const interval = setInterval(() => {
+        if (i < text.length) {
+          element.textContent += text[i];
+          i++;
+          chatWindow.scrollTop = chatWindow.scrollHeight;
+        } else {
+          clearInterval(interval);
+        }
+      }, speed);
+    }
+
+    // Show the first question after a delay
+    setTimeout(showQuestion, 1000);
+    // Function to show questions and handle user responses
     function showQuestion() {
       questionSection.innerHTML = '';
       // Loop questions infinitely
@@ -89,4 +136,5 @@
 
   </script>
 </body>
+
 </html>
