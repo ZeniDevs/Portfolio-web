@@ -1,0 +1,152 @@
+[
+    {
+        "py_question": "What is the output of print(type([]))?",
+        "options": [
+            "<class 'list'>",
+            "<class 'array'>",
+            "<list>",
+            "list"
+        ],
+        "answer": "<class 'list'>"
+    },
+    {
+        "py_question": "Which keyword is used to define a function in Python?",
+        "options": [
+            "function",
+            "def",
+            "fun",
+            "define"
+        ],
+        "answer": "def"
+    },
+    {
+        "py_question": "What does 'len()' function do?",
+        "options": [
+            "Returns the sum",
+            "Returns the type",
+            "Returns the length",
+            "Returns the size of memory"
+        ],
+        "answer": "Returns the length"
+    },
+    {
+        "py_question": "What is the output of: bool(0)?",
+        "options": [
+            "True",
+            "False",
+            "0",
+            "None"
+        ],
+        "answer": "False"
+    },
+    {
+        "py_question": "Which data type is used to store True or False?",
+        "options": [
+            "str",
+            "bool",
+            "int",
+            "float"
+        ],
+        "answer": "bool"
+    },
+    {
+        "ai_question": "What does AI stand for?",
+        "options": [
+            "Artificial Intelligence",
+            "Automated Input",
+            "Algorithmic Interface",
+            "Advanced Internet"
+        ],
+        "answer": "Artificial Intelligence"
+    },
+    {
+        "ai_question": "Which of these is NOT a type of AI?",
+        "options": [
+            "Narrow AI",
+            "General AI",
+            "Super AI",
+            "Crazy AI"
+        ],
+        "answer": "Crazy AI"
+    },
+    {
+        "ai_question": "Which programming language is commonly used for AI?",
+        "options": [
+            "Python",
+            "HTML",
+            "CSS",
+            "SQL"
+        ],
+        "answer": "Python"
+    },
+    {
+        "ai_question": "What is machine learning?",
+        "options": [
+            "AI that works only on machines",
+            "Teaching machines to learn from data",
+            "Coding in machines",
+            "Fixing hardware bugs"
+        ],
+        "answer": "Teaching machines to learn from data"
+    },
+    {
+        "ai_question": "What is the purpose of training data?",
+        "options": [
+            "To break the model",
+            "To clean the system",
+            "To help AI learn patterns",
+            "To install AI software"
+        ],
+        "answer": "To help AI learn patterns"
+    },
+    {
+        "cs_question": "What is the correct syntax to write a single-line comment in C#?",
+        "options": [
+            "<!-- comment -->",
+            "# comment",
+            "// comment",
+            "/* comment */"
+        ],
+        "answer": "// comment"
+    },
+    {
+        "cs_question": "Which data type is used to store true or false values?",
+        "options": [
+            "int",
+            "bool",
+            "char",
+            "string"
+        ],
+        "answer": "bool"
+    },
+    {
+        "cs_question": "What is the default value of an int variable in C#?",
+        "options": [
+            "0",
+            "null",
+            "undefined",
+            "1"
+        ],
+        "answer": "0"
+    },
+    {
+        "cs_question": "Which keyword is used to create an object in C#?",
+        "options": [
+            "new",
+            "create",
+            "init",
+            "object"
+        ],
+        "answer": "new"
+    },
+    {
+        "cs_question": "What symbol is used to access members of a class?",
+        "options": [
+            ".",
+            ":",
+            "::",
+            "#"
+        ],
+        "answer": "."
+    }
+]
