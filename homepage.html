@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zeni Page</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-zinc-900 text-white min-h-screen flex flex-col items-center justify-center px-4">
 
   <!-- Big Title -->
@@ -13,31 +15,37 @@
 
   <!-- Search Box -->
   <form onsubmit="event.preventDefault(); searchBrave()" class="w-full max-w-xl mb-12">
-    <input id="searchInput" type="text" placeholder="Search anything..." 
+    <input id="searchInput" type="text" placeholder="Search anything..."
       class="w-full p-3 rounded-xl bg-zinc-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-md" />
   </form>
 
   <!-- Card Links -->
   <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-    
-    <!-- Sample Card -->
-    <a href="https://portfolio-web-teal-one.vercel.app" class="flex flex-col items-center p-4 w-36 h-36 bg-zinc-800 rounded-xl hover:bg-zinc-700 transition-shadow shadow-lg">
-      <img src="/Assests/img/icons8-coding-50.png" alt="Icon" class="w-16 h-16 mb-4 opacity-80" />
+
+    <!--Portfolio-->
+    <a href="https://portfolio-web-teal-one.vercel.app"
+      class="flex flex-col items-center p-4 w-36 h-36 bg-zinc-800 rounded-xl hover:bg-zinc-700 transition-shadow shadow-lg">
+      <img src="/Assests/img/icons8-coding-100.png" alt="Icon" class="w-16 h-16 mb-4 opacity-80" />
       <span class="text-sm text-gray-300">Portfolio</span>
     </a>
 
-    <!-- Duplicate and change these -->
-    <a href="https://github.com/Tanjii-kunn" class="flex flex-col items-center p-4 w-36 h-36 bg-zinc-800 rounded-xl hover:bg-zinc-700 transition-shadow shadow-lg transform transition hover:scale-110">
+    <!--Github-->
+    <a href="https://github.com/Tanjii-kunn"
+      class="flex flex-col items-center p-4 w-36 h-36 bg-zinc-800 rounded-xl hover:bg-zinc-700 transition-shadow shadow-lg transform transition hover:scale-110">
       <img src="/Assests/img/icons8-github-logo-100.png" alt="Icon" class="w-16 h-16 mb-4 opacity-80" />
       <span class="text-sm text-gray-300">Github</span>
     </a>
 
-    <a href="https://hunterr-kun.itch.io/" class="flex flex-col items-center p-4 w-36 h-36 bg-zinc-800 rounded-xl hover:bg-zinc-700 transition-shadow shadow-lg transform transition hover:scale-110">
+    <!--itch-->
+    <a href="https://hunterr-kun.itch.io/"
+      class="flex flex-col items-center p-4 w-36 h-36 bg-zinc-800 rounded-xl hover:bg-zinc-700 transition-shadow shadow-lg transform transition hover:scale-110">
       <img src="/Assests/img/icons8-itch-io-128.png" alt="Icon" class="w-16 h-16 mb-4 opacity-80" />
       <span class="text-sm text-gray-300">Itch io</span>
     </a>
 
-    <a href="https://www.instagram.com/reyatsune/" class="flex flex-col items-center p-4 w-36 h-36 bg-zinc-800 rounded-xl hover:bg-zinc-700 transition-shadow shadow-lg transform transition hover:scale-110">
+    <!--Instagram-->
+    <a href="https://www.instagram.com/reyatsune/"
+      class="flex flex-col items-center p-4 w-36 h-36 bg-zinc-800 rounded-xl hover:bg-zinc-700 transition-shadow shadow-lg transform transition hover:scale-110">
       <img src="/Assests/img/icons8-instagram-250.png" alt="Icon" class="w-16 h-16 mb-4 opacity-80" />
       <span class="text-sm text-gray-300">Instagram</span>
     </a>
@@ -55,16 +63,15 @@
     }
   </script>
 
-</body>
-
-<body>
-    <footer class="bg-zinc-900 text-white  mt-12 text-center">
+  <!-- Footer -->
+  <footer class="bg-zinc-900 text-white  mt-12 text-center">
     <p class="text-gray-400 text-sm">
       &copy; 2025 Zeni. No rights reserved.
       <br>
       Made with Passion and Thinking.
     </p>
-   </footer>
+  </footer>
+
 </body>
 
 </html>
