@@ -13,10 +13,19 @@
 
   <header class="bg-gray-800 p-4 shadow-md flex flex-col sm:flex-row justify-between items-center">
     <div class="text-2xl font-bold text-cyan-400">My Projects</div>
-    <nav class="space-x-4 mt-2 sm:mt-0">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4 w-full sm:w-auto">
+      <nav class="space-x-4 mt-2 sm:mt-0"></nav>
       <a href="index.html" class="text-white hover:text-cyan-400 transition">Home</a>
       <a href="about.html" class="text-white hover:text-cyan-400 transition">About Me</a>
-    </nav>
+      </nav>
+      <form class="mt-2 sm:mt-0 sm:ml-4 flex" onsubmit="event.preventDefault();">
+        <input id="searchInput" type="text" placeholder="Search projects..."
+          class="px-3 py-1 rounded-l-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400" />
+        <button type="submit" class="px-3 py-1 bg-cyan-500 text-white rounded-r-lg hover:bg-cyan-600 transition">
+          🔍
+        </button>
+      </form>
+    </div>
   </header>
 
   <main class="p-6 space-y-12 max-w-4xl mx-auto">
@@ -27,8 +36,16 @@
       <p class="text-gray-400 mb-6">All my Python projects.</p>
 
       <!-- Happy Project -->
-      <div class="bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 max-w-3xl mx-auto mb-6">
+      <div class="project bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 max-w-3xl mx-auto mb-6"
+        data-tags="python,ai,voice assistant,speech recognition,vosk,pyttsx3,stt,tts">
         <h3 class="text-2xl font-extrabold text-cyan-400 mb-3">Happy</h3>
+        <ul class="flex flex-wrap gap-2 mb-3">
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Python</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">AI</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Voice Assistant</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Vosk</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">pyttsx3</li>
+        </ul>
         <p class="text-gray-300 leading-relaxed mb-4">
           <strong>Happy</strong> is my first Python AI project—a lightweight voice assistant that uses
           <span class="font-semibold text-cyan-300">Vosk</span> for speech-to-text (STT) and
@@ -42,8 +59,15 @@
       </div>
 
       <!-- Nexi Project -->
-      <div class="bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 max-w-3xl mx-auto">
+      <div class="project bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 max-w-3xl mx-auto"
+        data-tags="python,ai,chatbot,json,nemotron,api,assistant">
         <h3 class="text-2xl font-extrabold text-cyan-400 mb-3">Nexi</h3>
+        <ul class="flex flex-wrap gap-2 mb-3">
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Python</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">AI</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Chatbot</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">NVIDIA Nemotron</li>
+        </ul>
         <p class="text-gray-300 leading-relaxed mb-4">
           <strong>Nexi</strong> is my second AI chatbot, built to assist with everyday queries. It features a
           JSON-based memory system for storing and retrieving user data. While it doesn’t directly use machine
@@ -60,24 +84,36 @@
       <br>
 
       <!-- Zeni Browser -->
-      <div class="bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 max-w-3xl mx-auto">
+      <div class="project bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 max-w-3xl mx-auto"
+        data-tags="python,pyqt6,qt,webengine,browser,desktop,ui,automation">
         <h3 class="text-2xl font-extrabold text-cyan-400 mb-3">Zenirowser</h3>
+        <ul class="flex flex-wrap gap-2 mb-3">
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Python</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">PyQt6</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Qt WebEngine</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Browser</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Desktop</li>
+        </ul>
         <p class="text-gray-300 leading-relaxed mb-4">
           <strong>Zenirowser</strong> is a custom-built desktop browser coded using
-          <span class="text-cyan-300 font-semibold">PyQt6 and Qt WebEngine</span>. It features a slick and responsive UI with navigation controls, a dynamic URL bar that smartly switches between direct URLs and search queries, download
-          support via file picker, and live updates for the page title and favicon. Designed as part of my personal ecosystem
+          <span class="text-cyan-300 font-semibold">PyQt6 and Qt WebEngine</span>. It features a slick and responsive UI
+          with navigation controls, a dynamic URL bar that smartly switches between direct URLs and search queries,
+          download
+          support via file picker, and live updates for the page title and favicon. Designed as part of my personal
+          ecosystem
           tools, it reflects my obsession with <span class="text-cyan-300 font-semibold">speed, control, and modular
-          design</span>. Whether as a testbed for automation or the foundation for deeper AI integrations, ZeniBrowser is a minimal yet a powerful build
+            design</span>. Whether as a testbed for automation or the foundation for deeper AI integrations, ZeniBrowser
+          is a minimal yet a powerful build
           I'm proud to ship.
         </p>
-          <a href="https://github.com/ZeniDevs/Browser" target="_blank"
-            class="inline-block px-5 py-2.5 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition duration-200">
-            🔗 View Code on GitHub
-          </a>
-          <a href="https://www.mediafire.com/file/bmss8vv3wt6ansp/Zeni-Browser.zip/file" target="_blank"
-            class="inline-block px-5 py-2.5 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition duration-200">
-            🔗 Download It Yourself
-          </a>
+        <a href="https://github.com/ZeniDevs/Browser" target="_blank"
+          class="inline-block px-5 py-2.5 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition duration-200">
+          🔗 View Code on GitHub
+        </a>
+        <a href="https://www.mediafire.com/file/bmss8vv3wt6ansp/Zeni-Browser.zip/file" target="_blank"
+          class="inline-block px-5 py-2.5 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition duration-200">
+          🔗 Download It Yourself
+        </a>
       </div>
 
     </section>
@@ -88,8 +124,16 @@
       <p class="text-gray-400 mb-6">All my Game Development projects.</p>
 
       <!-- The Perfect World -->
-      <div class="bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 max-w-3xl mx-auto mb-6">
+      <div class="project bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 max-w-3xl mx-auto mb-6"
+        data-tags="game,godot,open world,quest,music,game jam">
         <h3 class="text-2xl font-extrabold text-cyan-400 mb-3">The Perfect World</h3>
+        <ul class="flex flex-wrap gap-2 mb-3">
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Game</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Godot</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Open World</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Quest System</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Game Jam</li>
+        </ul>
         <p class="text-white leading-relaxed mb-4">
           <strong>The Perfect World</strong> was my first game, developed for
           <span class="text-cyan-300 font-semibold">Bracker's Game Jam 2025</span>. Built using
@@ -110,8 +154,16 @@
       </div>
 
       <!-- The Mage's Wand -->
-      <div class="bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 max-w-3xl mx-auto">
+      <div class="project bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 max-w-3xl mx-auto"
+        data-tags="game,godot,platformer,action,parallax,items,game jam">
         <h3 class="text-2xl font-extrabold text-cyan-400 mb-3">The Mage's Wand</h3>
+        <ul class="flex flex-wrap gap-2 mb-3">
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Game</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Godot</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Platformer</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Parallax</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Game Jam</li>
+        </ul>
         <p class="text-white leading-relaxed mb-4">
           <strong>The Mage's Wand</strong> is a fast-paced action platformer made for
           <span class="text-cyan-300 font-semibold">Micro Jam</span>. Built in
@@ -135,8 +187,17 @@
       <br>
 
       <!-- The CULT -->
-      <div class="bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 max-w-3xl mx-auto">
+      <div class="project bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 max-w-3xl mx-auto"
+        data-tags="game,godot,platformer,action,team,shooting,health,game jam">
         <h3 class="text-2xl font-extrabold text-cyan-400 mb-3">The CULT</h3>
+        <ul class="flex flex-wrap gap-2 mb-3">
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Game</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Godot</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Platformer</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Team</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Shooting</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Game Jam</li>
+        </ul>
         <p class="text-white leading-relaxed mb-4">
           <strong>The CULT</strong> is a fast-paced action platformer made for the
           <span class="text-cyan-300 font-semibold">PlayGama Game Jam</span>. Built in
@@ -167,8 +228,18 @@
       <br>
 
       <!-- Doom -->
-      <div class="bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 max-w-3xl mx-auto">
+      <div class="project bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 max-w-3xl mx-auto"
+        data-tags="game,godot,platformer,action,shooting,teleportation,power-up,game jam">
         <h3 class="text-2xl font-extrabold text-cyan-400 mb-3">Doom: The Portal Saga</h3>
+        <ul class="flex flex-wrap gap-2 mb-3">
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Game</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Godot</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Platformer</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Shooting</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Teleportation</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Power-UP</li>
+          <li class="bg-cyan-700 px-2 py-0.5 rounded text-xs">Game Jam</li>
+        </ul>
         <p class="text-white leading-relaxed mb-4">
           <strong>Doom: The Portal Saga</strong> is a fast-paced action platformer made for the
           <span class="text-cyan-300 font-semibold">Micro Jim Game Jam</span>. Built in
@@ -197,7 +268,7 @@
             📄 The Game Design Document (GDD)
           </a>
 
-          <a href="https://github.com/ZeniDevs/Happy" target="_blank"Portal" target="_blank"
+          <a href="https://github.com/ZeniDevs/Happy" target="_blank" Portal" target="_blank"
             class="inline-block px-5 py-2.5 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition duration-200">
             🔗 View on GitHub
           </a>
@@ -208,11 +279,33 @@
           </video>
         </div>
       </div>
-
-
     </section>
 
   </main>
+
+  <script>
+    // Simple search functionality
+    const searchInput = document.getElementById('searchInput');
+    const projects = document.querySelectorAll('.project');
+
+    searchInput.addEventListener('input', function () {
+      const query = this.value.trim().toLowerCase();
+      projects.forEach(project => {
+        const title = project.querySelector('h3').textContent.toLowerCase();
+        const desc = project.querySelector('p').textContent.toLowerCase();
+        const tags = project.getAttribute('data-tags').toLowerCase();
+        if (
+          title.includes(query) ||
+          desc.includes(query) ||
+          tags.includes(query)
+        ) {
+          project.style.display = '';
+        } else {
+          project.style.display = 'none';
+        }
+      });
+    });
+  </script>
 
 </body>
 
